@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title> מתכונים </title>
+    <style>
+        body {
+            background: #f0abce;
+            margin: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="WebDesign.css" />
+</head>
+<body>
+    <h1> מתכונים </h1>
+    <script>
+    class Recipe {
+        constructor(name, ingredients, instructions, nutrition) {
+            this.name = name;
+            this.ingredients = ingredients;
+            this.instructions = instructions;
+            this.nutrition = nutrition;
+        }
+        display() {
+            document.body.innerHTML += "<h2>שם המתכון: " + this.name + "</h2>";
+            
+            document.body.innerHTML += "<h3>:מצרכים</h3>";
+            this.ingredients.forEach((item) => {
+                document.body.innerHTML += "<p>" + item + "</p>";
+            });
+
+            document.body.innerHTML += "<h3>:אופן הכנה</h3>";
+            this.instructions.forEach((step) => {
+                 document.body.innerHTML += "<p>" + step + "</p>";
+            });
+            
+            document.body.innerHTML += "<h3>:ערך תזונתי</h3>";
+            document.body.innerHTML += "<p>" + this.nutrition + "</p>";
+        }
+    }
+
+    const rice = new Recipe(
+        "אורז",
+        ["4 כוסות אורז", "6 כוסות מים", "כף שמן", "כפית מלח"],
+        [
+        ",לשטוף את האורז 3 פעמים ולהוסיף את המים לאחר מכן להוסיף את השמן ואת המלח ולערבב ",
+        ".לשים את האורז על אש בינונית עד שרוב המים מתאדים, להעביר לאש קטנה ולכסות עם חצי מכסה לכ10 דקות"
+        ],
+        ["124 קלוריות ל100 גרם "]
+    );
+    rice.display(); // קריאה לפונקציה
+    </script>
+</body>
+</html>
